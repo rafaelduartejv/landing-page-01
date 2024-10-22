@@ -205,15 +205,15 @@ transition-property: clip-path;
   justify-content: center;
   align-items: center;
   min-height: 130vh;
-  margin-left: 20em;
+  margin-left: 10em;
   margin-top: -10em;
 }
 
 .contact-form {
-  width: 100%;
-  max-width: 600px;
+  width: 700%;
+  max-width: 500px;
   background-color: transparent;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
