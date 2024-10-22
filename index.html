@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page = widht</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Nexus Negotium</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="#">Produtos</a>
+        <a href="#">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+    </header>
+
+    <section class ="home">
+      <video class="video-slide active" src="video-1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video-3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="video-2.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1><br><span>Societas et fraternitas in negotiis florent.</span></h1>
+        <p>Bem-vindo à nossa plataforma, onde parcerias sólidas e relacionamentos duradouros são a chave para o sucesso. Aqui, acreditamos que o verdadeiro crescimento nos negócios não acontece sozinho, mas por meio de colaboração, confiança e fraternidade entre profissionais. </p>
+          <a href="sobre.html">A Nexus</a>
+      </div>
+      <div class="content">
+        <h1><br><span>Produtos</span></h1>
+        <p>Oferecemos uma ampla variedade de produtos de alta qualidade, desde roupas e acessórios até itens essenciais como fitas e escovas. Com um portfólio diversificado, atendemos diferentes necessidades, sempre garantindo excelência e confiabilidade em cada fornecimento. Seja qual for o produto que você procura, temos a solução ideal! </p>
+          <a href="#">Veja os Produtos</a>
+      </div>
+      <div class="content">
+        <h1><br><span>Serviços</span></h1>
+        <p>Oferecemos uma gama completa de serviços para atender às suas necessidades tecnológicas. Nossa equipe especializada realiza desde a criação e manutenção de bancos de dados até o desenvolvimento de sites e aplicativos personalizados. Com um foco em inovação e qualidade, garantimos soluções eficientes e sob medida para impulsionar o seu negócio. Conte conosco para transformar suas ideias em realidade! </p>
+          <a href="#">Conheça os Serviços</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"> <i class ="fab fa-facebook-f"></i></a>
+        <a href="#"> <i class ="fab fa-instagram"></i></a>
+        <a href="#"> <i class ="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+
+    const menuBtn = document.querySelector(".menu-btn")
+    const navigation = document.querySelector(".navigation")
+
+    menuBtn.addEventListener("click", () =>{
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+
+    });
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active")
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active")
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active")
+      });
+
+      btns[manual].classList.add("active")
+      slides[manual].classList.add("active")
+      contents[manual].classList.add("active")
+
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
